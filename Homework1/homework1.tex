@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{setspace}
+\geometry{left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm}
+\begin{document}
+\begin{spacing}{2.0}
+\vspace*{0.25cm}
+\hrulefill
+\thispagestyle{empty}
+\begin{center}
+\begin{large}
+\sc{UM--SJTU Joint Institute \vspace{0.3em} \\ Introduction to Operating Systems \\ (VE482)}
+\end{large}
+
+\hrulefill
+
+
+\vspace*{5cm}
+\begin{Large}
+\sc{Homework 1}
+\end{Large}
+\vspace{2em}
+\end{center}
+\vfill
+
+\begin{table}[h!]
+\flushleft
+\begin{tabular}{lll}
+Name: Yu Xiao \hspace*{2em}&
+ID: 518021910696 \hspace*{2em}\\
+
+Date: Oct 2, 2021
+\end{tabular}
+\end{table}
+\end{spacing}
+
+\hfill
+
+\newpage
+\noindent\textbf{Ex.1} -- \textit{Revisions}\\
+Stack is a linear data structure in which the allocation and deallocation is automatically done by the complier instructions. Its address increases from high to low. \\
+Heap is a hierarchical (tree) structure in which the allocation and deallocation should be done by the programmer. Its address increases from low to high. \\ \\
+\noindent\textbf{Ex.2} -- \textit{Personal research}\\
+1. When a computer is powered on, the BIOS will first run the booting process. During this process, BIOS will first perform a power-on self-test to check that whether the other parts of the computer are working properly or not. Then, BIOS will check whether rebooting is necessary or not. It it is not necessary to do the rebooting, then BIOS will do a read/write test for RAM. After the booting process is finished, all the PC control will be given to the operating system, and the computer now is ready to read the input from the user.\\ \\
+BIOS' major task is to exam the computer hardware while booting, and communicate with computer's inputs and outputs.\\ \\
+Basically, the interaction between BIOS and OS only exist during the booting process. The BIOS will give the PC control to the OS after it make sure that the hardware condition is good. There is no interaction between them while the OS is running.\\ \\
+2. A hybrid kernel is an operating system kernel architecture that attempts to combine aspects and benefits of microkernel and monolithic kernel architectures used in computer operating systems. \\ \\
+A exo kernel is a type of operating system that seeks to provide application-level management of hardware resources. The architecture of this kernel is designed to separate resource protection from management to facilitate application-specific customization.\\ \\
+\noindent\textbf{Ex.3} -- \textit{Course application}\\
+1. Instructions $a$, $c$, and $d$ should only be allowed in kernel mode.\\
+For instruction $a$, disabling all interrupts belongs to the range of operating system management, which should not be allowed in user mode.\\
+For instruction $b$, reading the time-of-day clock won't cause any changes to the operating system, so it is allowed in user mode.\\
+For instruction $c$, setting the time-of-day clock is modifying the operating system setting, and therefore should not be allowed in user mode.\\
+For instruction $d$, changing the memory map is modifying the operating system setting, and therefore should not be allowed in user mode.\\ \\
+2. If two CPUs are both in used, then the execution time depends on the program assignment.\\
+If $P0$, $P1$ are assigned to one CPU and $P2$ is assigned to another one, the execution time will be 20ms.\\
+If $P0$, $P2$ are assigned to one CPU and $P1$ is assigned to another one, the execution time will be 25ms.\\
+If $P1$, $P2$ are assigned to one CPU and $P0$ is assigned to another one, the execution time will be 30ms.\\ \\  
+\noindent\textbf{Ex.4} -- \textit{Simple Problem}\\
+For a 25 lines by 80 rows character monochrome text screen,
+$$25 \times 80 = 2000\ byte,$$
+which is $2KB$.
+In the 1980s, it would cost
+$$2\times\$5=\$10$$
+For a 1024 $\times$ 768 pixel 24-bit color bitmap,
+$$1024\times 768\times \frac{24}{8}=2359296\ byte,$$
+which is $2304KB$.
+In the 1980s, it would cost
+$$2304\times \$5=\$11520$$
+Currently, the price for a video RAM is much less than $\$1/MB$.\\ \\
+\noindent\textbf{Ex.5}\\
+Please refer to the attached .sh file.
+
+\end{document}
