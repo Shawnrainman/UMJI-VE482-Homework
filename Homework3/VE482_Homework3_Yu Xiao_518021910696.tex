@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{setspace}
+\geometry{left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm}
+\begin{document}
+\begin{spacing}{2.0}
+\vspace*{0.25cm}
+\hrulefill
+\thispagestyle{empty}
+\begin{center}
+\begin{large}
+\sc{UM--SJTU Joint Institute \vspace{0.3em} \\ Introduction to Operating Systems \\ (VE482)}
+\end{large}
+
+\hrulefill
+
+
+\vspace*{5cm}
+\begin{Large}
+\sc{Homework 2}
+\end{Large}
+\vspace{2em}
+\end{center}
+\vfill
+
+\begin{table}[h!]
+\flushleft
+\begin{tabular}{lll}
+Name: Yu Xiao \hspace*{2em}&
+ID: 518021910696 \hspace*{2em}\\
+
+Date: Oct 2, 2021
+\end{tabular}
+\end{table}
+\end{spacing}
+
+\hfill
+
+\newpage
+\noindent\textbf{Ex.1} -- \textit{General questions}
+\begin{enumerate}
+\item
+Threads in a process cooperate with each other for the better performance of the processes. In threads, there is no periodic clock interrupts like in process. If another thread in the same process is launched for the good of the process, then it is better for current thread to voluntarily release the CPU so that other threads can run.
+\item
+Advantage: efficiency. The implementation of user space threads ensures that users don't have to care about the cost of crossing the boundary between the user space and kernel when switching threads. For certain programs, the ability of having their own scheduler can also be an advantage.\\ \\
+Disadvantage: the entire process will be blocked if one of its threads is blocked.
+\item
+No. For single-threaded process, the entire process will be blocked if it is waiting for keyboard input, and therefore the process cannot fork a new thread.
+\item
+It is very likely that the program cannot run properly.
+\end{enumerate}
+
+\noindent\textbf{Ex.2} -- \textit{C programming}\\
+Please refer to the attach code and \textbf{README} file.\\
+
+\noindent\textbf{Ex.3} -- \textit{Research on POSIX}\\
+The Portable Operating System Interface (POSIX) is a family of standards specified by IEEE Computer Society for maintaining compatibility between operating systems. POSIX defines the application programming interface (API), command line shells and utility interfaces for software compatibility (portability) with variants of Unix and other operating systems.\\ \\
+Unix was first selected as the basis for a standard system interface. Due to the fact that several major versions of Unix like macOS and Linux existed, there was a need to develop a common-denominator system.\\ \\
+POSIX standard includes:
+\begin{itemize}
+\item
+General concepts and interfaces
+\item
+standardized user command line and scripting interface
+\item
+standardized user-level programs, services, utilities and required program-level services
+\item
+standard threading library API
+\end{itemize}
+\end{document}
